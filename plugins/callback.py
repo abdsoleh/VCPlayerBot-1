@@ -113,8 +113,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
             back=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("Back", callback_data="help_main"),
-                        InlineKeyboardButton("Close", callback_data="close"),
+                        InlineKeyboardButton("🔘Back🔘", callback_data="help_main"),
+                        InlineKeyboardButton("🔘Close🔘", callback_data="close"),
                     ],
                 ]
                 )
@@ -122,19 +122,19 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
-                            InlineKeyboardButton(f"Play", callback_data='help_play'),
-                            InlineKeyboardButton(f"Settings", callback_data=f"help_settings"),
-                            InlineKeyboardButton(f"Recording", callback_data='help_record'),
+                            InlineKeyboardButton(f"🔘Play🔘", callback_data='help_play'),
+                            InlineKeyboardButton(f"🔘Settings🔘", callback_data=f"help_settings"),
+                            InlineKeyboardButton(f"🔘Recording🔘", callback_data='help_record'),
                         ],
                         [
-                            InlineKeyboardButton("Scheduling", callback_data="help_schedule"),
-                            InlineKeyboardButton("Controling", callback_data='help_control'),
-                            InlineKeyboardButton("Admins", callback_data="help_admin"),
+                            InlineKeyboardButton("🔘Scheduling🔘", callback_data="help_schedule"),
+                            InlineKeyboardButton("🔘Controling🔘", callback_data='help_control'),
+                            InlineKeyboardButton("🔘Admins🔘", callback_data="help_admin"),
                         ],
                         [
-                            InlineKeyboardButton(f"Misc", callback_data='help_misc'),
-                            InlineKeyboardButton("Config Vars", callback_data='help_env'),
-                            InlineKeyboardButton("Close", callback_data="close"),
+                            InlineKeyboardButton(f"🔘Misc🔘", callback_data='help_misc'),
+                            InlineKeyboardButton("🔘Config Vars🔘", callback_data='help_env'),
+                            InlineKeyboardButton("🔘Close🔘", callback_data="close"),
                         ],
                     ]
                     )
@@ -158,7 +158,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             
         if not (query.from_user is None or query.from_user.id in admins):
             await query.answer(
-                "😒 Played Joji.mp3",
+                " . . . ",
                 show_alert=True
                 )
             return
@@ -263,11 +263,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 final=f"{day}th {smonth} {year} at {hour}:{minute}"
                 button=[
                     [
-                        InlineKeyboardButton("Confirm", callback_data=f"schconfirm_{year}-{month}-{day} {hour}:{minute}"),
-                        InlineKeyboardButton("Back", callback_data=f"sch_day_{year}_{month}_{day}_{hour}")
+                        InlineKeyboardButton("🔘Confirm🔘", callback_data=f"schconfirm_{year}-{month}-{day} {hour}:{minute}"),
+                        InlineKeyboardButton("🔘Back🔘", callback_data=f"sch_day_{year}_{month}_{day}_{hour}")
                     ],
                     [
-                        InlineKeyboardButton("Close", callback_data="schclose")
+                        InlineKeyboardButton("🔘Close🔘", callback_data="schclose")
                     ]
                 ]
                 data=Config.SCHEDULED_STREAM.get(f"{query.message.chat.id}_{query.message.message_id}")
